@@ -1,6 +1,4 @@
--- =========================
 -- Row counts per table
--- =========================
 
 SELECT 'customers' AS table_name, COUNT(*) FROM customers
 UNION ALL
@@ -14,9 +12,7 @@ SELECT 'employees', COUNT(*) FROM employees
 UNION ALL
 SELECT 'suppliers', COUNT(*) FROM suppliers;
 
--- =========================
 -- Customers by country
--- =========================
 
 SELECT
     country,
@@ -25,9 +21,7 @@ FROM customers
 GROUP BY country
 ORDER BY num_customers DESC;
 
--- =========================
 -- Orders per year
--- =========================
 
 SELECT
     EXTRACT(YEAR FROM order_date) AS year,
@@ -36,9 +30,7 @@ FROM orders
 GROUP BY year
 ORDER BY year;
 
--- =========================
 -- Products by category
--- =========================
 
 SELECT
     c.category_name,
@@ -49,9 +41,7 @@ JOIN categories c
 GROUP BY c.category_name
 ORDER BY num_products DESC;
 
--- =========================
 -- Top 10 Customers By Order
--- =========================
 
 SELECT
     c.company_name,
