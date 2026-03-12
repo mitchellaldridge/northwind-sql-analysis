@@ -35,11 +35,7 @@ WITH monthly_product_revenue AS (
         DATE_TRUNC('month', o.order_date)
 ),
 monthly_category_rank AS (
-    SELECT
-        category_name,
-        product_name,
-        order_month,
-        monthly_revenue,
+    SELECT category_name, product_name, order_month, monthly_revenue,
         DENSE_RANK() OVER (
             PARTITION BY category_name, order_month
             ORDER BY monthly_revenue DESC
@@ -47,11 +43,7 @@ monthly_category_rank AS (
     FROM monthly_product_revenue
 ),
 rank_with_lag AS (
-    SELECT
-        category_name,
-        product_name,
-        order_month,
-        monthly_revenue,
+    SELECT category_name, product_name, order_month, monthly_revenue,
         category_rank,
         LAG(category_rank) OVER (
             PARTITION BY category_name, product_name
@@ -59,13 +51,8 @@ rank_with_lag AS (
         ) AS prior_month_rank
     FROM monthly_category_rank
 )
-SELECT
-    category_name,
-    product_name,
-    order_month,
-    monthly_revenue,
-    category_rank,
-    prior_month_rank,
+SELECT category_name, product_name, order_month, monthly_revenue,
+    category_rank, prior_month_rank,
     prior_month_rank - category_rank AS rank_change
 FROM rank_with_lag
 WHERE prior_month_rank IS NOT NULL
