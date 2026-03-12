@@ -81,18 +81,6 @@ Key questions:
 
 ---
 
-## SQL Techniques Demonstrated
-
-This project demonstrates several analytical SQL techniques including:
-
-- Common Table Expressions (CTEs)
-- Window functions (`DENSE_RANK`, `LAG`, `SUM() OVER`)
-- Multi-table joins
-- Aggregations and ranking
-- Business metric calculations
-
----
-
 ## Example Insights
 
 This analysis can reveal insights such as:
@@ -112,13 +100,5 @@ This analysis can reveal insights such as:
 
 ---
 
-## Skills Demonstrated
 
-- Advanced SQL querying
-- Window functions and ranking
-- Query structuring with CTEs
-- Relational database analysis
-- Translating business questions into analytical queries
-
----
 
