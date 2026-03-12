@@ -112,13 +112,5 @@ This analysis can reveal insights such as:
 
 ---
 
-## Skills Demonstrated
 
-- Advanced SQL querying
-- Window functions and ranking
-- Query structuring with CTEs
-- Relational database analysis
-- Translating business questions into analytical queries
-
----
 
