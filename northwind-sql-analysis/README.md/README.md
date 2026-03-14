@@ -2,6 +2,7 @@
 
 ## Project Overview
 This project analyzes business performance using the **Northwind database**, a classic retail dataset representing a wholesale food distribution company.
+
 Data: https://github.com/pthom/northwind_psql 
 
 The objective of the project is to demonstrate advanced SQL skills by answering real-world business questions related to:
